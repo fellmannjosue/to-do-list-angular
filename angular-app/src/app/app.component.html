@@ -1,7 +1,10 @@
-
-    <span>{{ title }} app is running!</span>
-
-    
-
-
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      
+      <app-task-list [tasks]="tasks"></app-task-list> 
+      
+      <app-task-add (addTaskEventEmitter)="addTaskEventEmitter($event)"></app-task-add>
+    </div>
+  </div>
+</div>

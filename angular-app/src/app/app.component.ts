@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from '../app/model/task';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'To Do List';
+  title = 'todo-app';
+
+  tasks : Task[];
+
+  constructor(){
+    this.tasks = [];
+  }
+
+  addTaskEventEmitter($event){
+    this.tasks.push(new Task($event.taskTitle));
+    console.log('Tasks are ', this.tasks);
+  }
 }
